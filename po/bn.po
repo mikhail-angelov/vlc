@@ -2648,8 +2648,8 @@ msgstr "পছন্দনীয় ডিকোডার তালিকা"
 msgid ""
 "When several video formats are available, select one whose resolution is "
 "closest to (but not higher than) this setting, in number of lines. Use this "
-"option if you don't have enough CPU power or network bandwidth to play higher "
-"resolutions."
+"option if you don't have enough CPU power or network bandwidth to play "
+"higher resolutions."
 msgstr ""
 
 #: src/libvlc-module.c:744
@@ -5565,10 +5565,6 @@ msgstr "স্বয়ংক্রিয়ভাবে ভিডিওর আকা�
 msgid "Scale factor"
 msgstr "স্কেল ফ্যাক্টর"
 
-#: modules/3dnow/memcpy.c:49
-msgid "3D Now! memcpy"
-msgstr "এখন ত্রিমাত্রিক করা হবে! memcpy"
-
 #: modules/access/alsa.c:71 modules/access/oss.c:66
 msgid "Capture the audio stream in stereo."
 msgstr "স্টেরিওতে অডিও স্ট্রীম ক্যাপচার করা হবে।"
@@ -7038,8 +7034,7 @@ msgstr "অনুগ্রহ করে %s এলাকার জন্য এ�
 #: modules/access/idummy.c:42 modules/access_output/dummy.c:46
 #: modules/audio_output/adummy.c:40 modules/codec/ddummy.c:46
 #: modules/codec/edummy.c:39 modules/control/dummy.c:48
-#: modules/misc/memcpy.c:41 modules/text_renderer/tdummy.c:35
-#: modules/video_output/vdummy.c:47
+#: modules/text_renderer/tdummy.c:35 modules/video_output/vdummy.c:47
 msgid "Dummy"
 msgstr "ডামি"
 
@@ -9019,10 +9014,6 @@ msgstr "জিপ ফাইলের পরিশোধক"
 #: modules/access/zip/zipstream.c:53
 msgid "Zip access"
 msgstr "জিপ-এ প্রবেশাধিকার"
-
-#: modules/altivec/memcpy.c:64
-msgid "AltiVec memcpy"
-msgstr "AltiVec memcpy"
 
 #: modules/arm_neon/audio_format.c:36
 msgid "ARM NEON audio format conversions"
@@ -21412,10 +21403,6 @@ msgstr "লগ ফাইলের নাম"
 msgid "Specify the log filename."
 msgstr "লগ ফাইলের নাম সুনির্দিষ্টভাবে উল্লেখ করা হবে।"
 
-#: modules/misc/memcpy.c:42
-msgid "libc memcpy"
-msgstr "libc memcpy"
-
 #: modules/misc/osd/parser.c:51
 msgid "OSD configuration importer"
 msgstr "OSD কনফিগারেশন ইম্পোর্টার"
@@ -21511,14 +21498,6 @@ msgstr "স্ট্যাট ডিমাক্স ফাংশন"
 #: modules/misc/xml/libxml.c:49
 msgid "XML Parser (using libxml2)"
 msgstr "XML পার্সার (libxml2 ব্যবহার করে)"
-
-#: modules/mmxext/memcpy.c:49
-msgid "MMX EXT memcpy"
-msgstr "MMX EXT memcpy"
-
-#: modules/mmx/memcpy.c:49
-msgid "MMX memcpy"
-msgstr "MMX memcpy"
 
 #: modules/mux/asf.c:57
 msgid "Title to put in ASF comments."
@@ -28733,6 +28712,21 @@ msgstr "রিফ্রেশের সময়"
 #, fuzzy
 msgid "Enqueue"
 msgstr "এনকিউ করা হবে (&E)"
+
+#~ msgid "3D Now! memcpy"
+#~ msgstr "এখন ত্রিমাত্রিক করা হবে! memcpy"
+
+#~ msgid "AltiVec memcpy"
+#~ msgstr "AltiVec memcpy"
+
+#~ msgid "libc memcpy"
+#~ msgstr "libc memcpy"
+
+#~ msgid "MMX EXT memcpy"
+#~ msgstr "MMX EXT memcpy"
+
+#~ msgid "MMX memcpy"
+#~ msgstr "MMX memcpy"
 
 #~ msgid ""
 #~ "The specified sound font file (%s) is incorrect.\n"

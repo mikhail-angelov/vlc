@@ -2684,8 +2684,8 @@ msgstr "Llista dels decodificadors preferits"
 msgid ""
 "When several video formats are available, select one whose resolution is "
 "closest to (but not higher than) this setting, in number of lines. Use this "
-"option if you don't have enough CPU power or network bandwidth to play higher "
-"resolutions."
+"option if you don't have enough CPU power or network bandwidth to play "
+"higher resolutions."
 msgstr ""
 
 #: src/libvlc-module.c:744
@@ -5648,10 +5648,6 @@ msgstr "Paràmetres de vídeo"
 msgid "Scale factor"
 msgstr "Factor de quantificació I "
 
-#: modules/3dnow/memcpy.c:49
-msgid "3D Now! memcpy"
-msgstr "3D Now! memcpy"
-
 #: modules/access/alsa.c:71 modules/access/oss.c:66
 msgid "Capture the audio stream in stereo."
 msgstr "Captura el flux de so en estèreo."
@@ -7114,8 +7110,7 @@ msgstr ""
 #: modules/access/idummy.c:42 modules/access_output/dummy.c:46
 #: modules/audio_output/adummy.c:40 modules/codec/ddummy.c:46
 #: modules/codec/edummy.c:39 modules/control/dummy.c:48
-#: modules/misc/memcpy.c:41 modules/text_renderer/tdummy.c:35
-#: modules/video_output/vdummy.c:47
+#: modules/text_renderer/tdummy.c:35 modules/video_output/vdummy.c:47
 msgid "Dummy"
 msgstr "Dummy"
 
@@ -9112,10 +9107,6 @@ msgstr "El·ludeix el flitre de bucle"
 #, fuzzy
 msgid "Zip access"
 msgstr "Accés DAAP"
-
-#: modules/altivec/memcpy.c:64
-msgid "AltiVec memcpy"
-msgstr "AltiVec memcpy"
 
 #: modules/arm_neon/audio_format.c:36
 #, fuzzy
@@ -21855,10 +21846,6 @@ msgstr "Nom del fitxer de registre"
 msgid "Specify the log filename."
 msgstr "Especifica el nom del fitxer de registre"
 
-#: modules/misc/memcpy.c:42
-msgid "libc memcpy"
-msgstr "libc memcpy"
-
 #: modules/misc/osd/parser.c:51
 #, fuzzy
 msgid "OSD configuration importer"
@@ -21962,14 +21949,6 @@ msgstr "Funció del demultiplexor Dummy"
 #: modules/misc/xml/libxml.c:49
 msgid "XML Parser (using libxml2)"
 msgstr "Analitzador XML (utilitzant libxml2)"
-
-#: modules/mmxext/memcpy.c:49
-msgid "MMX EXT memcpy"
-msgstr "MMX EXT memcpy"
-
-#: modules/mmx/memcpy.c:49
-msgid "MMX memcpy"
-msgstr "MMX memcpy"
 
 #: modules/mux/asf.c:57
 #, fuzzy
@@ -29525,6 +29504,21 @@ msgstr "Hora d'inici"
 #: share/lua/http/dialogs/browse_window.html:17
 msgid "Enqueue"
 msgstr ""
+
+#~ msgid "3D Now! memcpy"
+#~ msgstr "3D Now! memcpy"
+
+#~ msgid "AltiVec memcpy"
+#~ msgstr "AltiVec memcpy"
+
+#~ msgid "libc memcpy"
+#~ msgstr "libc memcpy"
+
+#~ msgid "MMX EXT memcpy"
+#~ msgstr "MMX EXT memcpy"
+
+#~ msgid "MMX memcpy"
+#~ msgstr "MMX memcpy"
 
 #~ msgid "Audio filter for ugly resampling"
 #~ msgstr "Filtre d’àudio pel remostratge lleig"

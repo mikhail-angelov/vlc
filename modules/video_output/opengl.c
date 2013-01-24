@@ -161,6 +161,8 @@ struct vout_display_opengl_t {
 
     /* Non-power-of-2 texture size support */
     bool supports_npot;
+
+    int height;
 };
 
 static inline int GetAlignedSize(unsigned size)
@@ -194,13 +196,13 @@ static void BuildVertexShader(vout_display_opengl_t *vgl,
     /* Basic vertex shader */
     const char *vertexShader =
         "#version " GLSL_VERSION "\n"
-        "varying   vec4 TexCoord0,TexCoord1, TexCoord2;"
+        "varying   vec4 TexCoord0;"//,TexCoord1, TexCoord2;"
         "attribute vec4 MultiTexCoord0,MultiTexCoord1,MultiTexCoord2;"
         "attribute vec4 VertexPosition;"
         "void main() {"
-        " TexCoord0 = MultiTexCoord0;"
-        " TexCoord1 = MultiTexCoord1;"
-        " TexCoord2 = MultiTexCoord2;"
+        " TexCoord0 = MultiTexCoord0;" //pass coordinate to fragment shader
+        //" TexCoord1 = MultiTexCoord1;"
+        //" TexCoord2 = MultiTexCoord2;"
         " gl_Position = VertexPosition;"
         "}";
 
@@ -241,17 +243,23 @@ static void BuildYUVFragmentShader(vout_display_opengl_t *vgl,
         "uniform sampler2D Texture1;"
         "uniform sampler2D Texture2;"
         "uniform vec4      Coefficient[4];"
-        "varying vec4      TexCoord0,TexCoord1,TexCoord2;"
+        "varying vec4      TexCoord0;" //,TexCoord1,TexCoord2;"
+        "uniform int       height;"
 
         "void main(void) {"
         " vec4 x,y,z,result;"
-        " x  = texture2D(Texture0, TexCoord0.st);"
-        " %c = texture2D(Texture1, TexCoord1.st);"
-        " %c = texture2D(Texture2, TexCoord2.st);"
+        "vec4 tc = TexCoord0;"
+        "float d = mod((floor(height*(tc.y+1.0))),2.0);" //odd or even
+        "if(d>0.1) tc.x += 0.5;" //shift texture
+        " x  = texture2D(Texture0, tc.st);"
+        " %c = texture2D(Texture1, tc.st);"
+        " %c = texture2D(Texture2, tc.st);"
 
         " result = x * Coefficient[0] + Coefficient[3];"
         " result = (y * Coefficient[1]) + result;"
         " result = (z * Coefficient[2]) + result;"
+        " if(TexCoord0.x > 0.5) result = vec4(0,0,0,1);" //cut off right side
+        
         " gl_FragColor = result;"
         "}";
     bool swap_uv = fmt->i_chroma == VLC_CODEC_YV12 ||
@@ -635,7 +643,7 @@ error:
 }
 
 int vout_display_opengl_Prepare(vout_display_opengl_t *vgl,
-                                picture_t *picture, subpicture_t *subpicture)
+                                picture_t *picture, subpicture_t *subpicture, int height)
 {
     if (vlc_gl_Lock(vgl->gl))
         return VLC_EGENERIC;
@@ -654,6 +662,8 @@ int vout_display_opengl_Prepare(vout_display_opengl_t *vgl,
                         vgl->fmt.i_height * vgl->chroma->p[j].h.num / vgl->chroma->p[j].h.den,
                         vgl->tex_format, vgl->tex_type, picture->p[j].p_pixels);
     }
+
+    vgl->height = height;
 
     int         last_count = vgl->region_count;
     gl_region_t *last = vgl->region;
@@ -788,6 +798,7 @@ static void DrawWithShaders(vout_display_opengl_t *vgl,
     vgl->Uniform1i(vgl->GetUniformLocation(vgl->program[0], "Texture0"), 0);
     vgl->Uniform1i(vgl->GetUniformLocation(vgl->program[0], "Texture1"), 1);
     vgl->Uniform1i(vgl->GetUniformLocation(vgl->program[0], "Texture2"), 2);
+    vgl->Uniform1i(vgl->GetUniformLocation(vgl->program[0], "height"), vgl->height);
 
     static const GLfloat vertexCoord[] = {
         -1.0,  1.0,

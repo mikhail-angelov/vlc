@@ -2461,8 +2461,8 @@ msgstr "Ebisiimirwe"
 msgid ""
 "When several video formats are available, select one whose resolution is "
 "closest to (but not higher than) this setting, in number of lines. Use this "
-"option if you don't have enough CPU power or network bandwidth to play higher "
-"resolutions."
+"option if you don't have enough CPU power or network bandwidth to play "
+"higher resolutions."
 msgstr ""
 
 #: src/libvlc-module.c:744
@@ -5350,10 +5350,6 @@ msgstr "Basiza filimu"
 msgid "Scale factor"
 msgstr "Toorana endagiriro"
 
-#: modules/3dnow/memcpy.c:49
-msgid "3D Now! memcpy"
-msgstr ""
-
 #: modules/access/alsa.c:71 modules/access/oss.c:66
 msgid "Capture the audio stream in stereo."
 msgstr ""
@@ -6779,8 +6775,7 @@ msgstr ""
 #: modules/access/idummy.c:42 modules/access_output/dummy.c:46
 #: modules/audio_output/adummy.c:40 modules/codec/ddummy.c:46
 #: modules/codec/edummy.c:39 modules/control/dummy.c:48
-#: modules/misc/memcpy.c:41 modules/text_renderer/tdummy.c:35
-#: modules/video_output/vdummy.c:47
+#: modules/text_renderer/tdummy.c:35 modules/video_output/vdummy.c:47
 msgid "Dummy"
 msgstr ""
 
@@ -8740,10 +8735,6 @@ msgstr "Iguraho ekihandiiko kyemitwe"
 
 #: modules/access/zip/zipstream.c:53
 msgid "Zip access"
-msgstr ""
-
-#: modules/altivec/memcpy.c:64
-msgid "AltiVec memcpy"
 msgstr ""
 
 #: modules/arm_neon/audio_format.c:36
@@ -20599,10 +20590,6 @@ msgstr "Eiziina ryekihandiiko"
 msgid "Specify the log filename."
 msgstr ""
 
-#: modules/misc/memcpy.c:42
-msgid "libc memcpy"
-msgstr ""
-
 #: modules/misc/osd/parser.c:51
 msgid "OSD configuration importer"
 msgstr ""
@@ -20697,14 +20684,6 @@ msgstr ""
 
 #: modules/misc/xml/libxml.c:49
 msgid "XML Parser (using libxml2)"
-msgstr ""
-
-#: modules/mmxext/memcpy.c:49
-msgid "MMX EXT memcpy"
-msgstr ""
-
-#: modules/mmx/memcpy.c:49
-msgid "MMX memcpy"
 msgstr ""
 
 #: modules/mux/asf.c:57

@@ -62,3 +62,6 @@ build-*
 contrib-*
 install-*
 
+#extra rulles
+build/*
+*.po
