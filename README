@@ -1,3 +1,6 @@
+I clone vlc in order to add sterioscopic view support into it.
+===============================
+
 README for the VLC media player
 ===============================
 
@@ -53,3 +56,4 @@ po/                - VLC translations.
 share/             - Common Resources files.
 src/               - libvlccore source code.
 test/              - testing system.
+
