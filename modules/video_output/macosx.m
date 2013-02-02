@@ -294,7 +294,7 @@ static void PictureRender (vout_display_t *vd, picture_t *pic, subpicture_t *sub
 
     vout_display_sys_t *sys = vd->sys;
 
-    vout_display_opengl_Prepare (sys->vgl, pic, subpicture, sys->place.height);
+    vout_display_opengl_Prepare (sys->vgl, pic, subpicture, sys->place.height*2);
 }
 
 static void PictureDisplay (vout_display_t *vd, picture_t *pic, subpicture_t *subpicture)
@@ -388,7 +388,7 @@ static int Control (vout_display_t *vd, int query, va_list ap)
                This has the positive side effect that we avoid erratic sizing as we animate every resize. */
             if (query != VOUT_DISPLAY_CHANGE_DISPLAY_SIZE)
                 // x / y are top left corner, but we need the lower left one
-                glViewport (place.x, cfg_tmp.display.height - (place.y + place.height), place.width, place.height);
+                glViewport (place.x, cfg_tmp.display.height - (place.y + place.height), place.width, place.height*2);
 
 
             [o_pool release];
@@ -629,7 +629,7 @@ static void OpenglSwap (vlc_gl_t *gl)
 
     if ([self lockgl]) {
         // x / y are top left corner, but we need the lower left one
-        glViewport (place.x, bounds.size.height - (place.y + place.height), place.width, place.height);
+        glViewport (place.x, bounds.size.height - (place.y + place.height), place.width, place.height*2);
 
         @synchronized(self) {
             // This may be cleared before -drawRect is being called,

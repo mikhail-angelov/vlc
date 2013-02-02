@@ -803,8 +803,8 @@ static void DrawWithShaders(vout_display_opengl_t *vgl,
     static const GLfloat vertexCoord[] = {
         -1.0,  1.0,
         -1.0, -1.0,
-         1.0,  1.0,
-         1.0, -1.0,
+         3.0,  1.0,
+         3.0, -1.0,
     };
 
     for (unsigned j = 0; j < vgl->chroma->plane_count; j++) {
